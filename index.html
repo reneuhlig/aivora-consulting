@@ -1,0 +1,172 @@
+<!-- Simple single-file company website for Alpha Vision Consulting (Corporate Colors: Dark Blue #15153E, Orange #F36C21)
+     - Replace the GOOGLE_DRIVE_LINK placeholder with your actual Google Drive share link for the One Pager
+     - Replace image placeholders (logo.png and teamX.jpg) with your real files
+-->
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alpha Vision Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --dark:#15153E;
+      --accent:#F36C21;
+      --muted:#7a7a7a;
+      --maxw:1100px;
+      --radius:12px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Poppins, Rubik, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--dark); background:var(--bg); line-height:1.5}
+    a{color:var(--accent); text-decoration:none}
+    header{background:linear-gradient(180deg, rgba(21,21,62,0.08), rgba(21,21,62,0)); padding:28px 20px; border-bottom:1px solid #eef2ff}
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+
+    .brand{display:flex; align-items:center; gap:14px}
+    .logo{width:60px; height:60px; border-radius:10px; background:var(--dark); display:flex; align-items:center; justify-content:center; overflow:hidden}
+    .logo img{width:100%; height:100%; object-fit:cover; border-radius:10px}
+    nav{margin-left:auto}
+    nav a{margin-left:18px; color:var(--dark); font-weight:600}
+
+    .hero{display:flex; gap:32px; align-items:center; padding:48px 0}
+    .hero-left{flex:1}
+    .hero h1{font-size:28px; margin:0 0 10px; color:var(--dark)}
+    .tag{display:inline-block; background:var(--accent); color:white; padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px}
+    .kicker{color:var(--muted); margin-bottom:12px}
+    .intro{font-size:16px; color:var(--muted); margin-bottom:20px}
+    .cta{display:inline-block; background:var(--accent); color:white; padding:12px 18px; border-radius:10px; font-weight:700}
+
+    .hero-right{width:360px; background:white; border-radius:14px; box-shadow:0 6px 24px rgba(21,21,62,0.06); padding:18px}
+    .card-title{font-weight:700; margin-bottom:8px}
+    .stat{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #f0f4ff}
+
+    section{padding:36px 0}
+    h2{margin:0 0 12px; font-size:20px; color:var(--dark)}
+    .grid{display:grid; gap:16px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .service{background:#fff; border-radius:12px; padding:16px; box-shadow:0 4px 18px rgba(21,21,62,0.06)}
+    .service h3{margin:0 0 6px; color:var(--dark)}
+    .muted{color:var(--muted)}
+
+    .team{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+    .member{background:#fff; padding:18px; border-radius:12px; text-align:center; box-shadow:0 6px 18px rgba(21,21,62,0.03)}
+    .member img{width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; border:3px solid var(--accent)}
+    .member h4{margin:0 0 6px; color:var(--dark)}
+    .member p{margin:0; color:var(--muted)}
+
+    .contact{display:flex; gap:20px; flex-wrap:wrap}
+    .contact .box{flex:1; min-width:240px; background:linear-gradient(180deg, #fff, #fbfdff); padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(21,21,62,0.04)}
+
+    footer{border-top:1px solid #f1f5ff; padding:20px 0; color:var(--muted)}
+    .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+
+    @media (max-width:900px){
+      .hero{flex-direction:column}
+      .hero-right{width:100%}
+      nav{display:none}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center">
+      <div class="brand">
+        <div class="logo">
+          <!-- Replace with your logo image -->
+          <img src="images/logo.png" alt="Alpha Vision Consulting Logo">
+        </div>
+        <div>
+          <div style="font-weight:700">Alpha Vision Consulting</div>
+          <div class="muted" style="font-size:13px">Transforming Sales. Accelerating Success.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#services">Services</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-left">
+        <span class="tag">Besser verkaufen mit AI</span>
+        <div class="kicker">Digitalisierung &amp; Prozessoptimierung</div>
+        <h1>Wir befähigen Sales-Teams durch bessere digitale Prozesse &amp; AI-gestützte Lösungen</h1>
+        <p class="intro">Alpha Vision Consulting hilft Vertriebsabteilungen, Zeit zu sparen, Prozesse zu digitalisieren und mit gezielter AI-Integration mehr Abschlüsse zu erzielen.</p>
+        <a class="cta" href="#contact">Kostenloses Erstgespräch</a>
+      </div>
+
+      <aside class="hero-right">
+        <div class="card-title">Quick Facts</div>
+        <div class="stat"><div>Sales Zeit für Verkauf</div><div><strong>25%</strong></div></div>
+        <div class="stat"><div>Fokus</div><div class="muted">Process Optimization · AI Integration</div></div>
+        <div style="padding-top:10px"><a href="#services">Unsere Services ansehen →</a></div>
+      </aside>
+    </section>
+
+    <section id="services">
+      <h2>Unsere Services</h2>
+      <p class="muted">Von Discovery bis zur AI-Integration — wir begleiten Sie in allen Phasen.</p>
+      <div class="grid services" style="margin-top:16px">
+        <div class="service">
+          <h3>Discovery &amp; Analyse</h3>
+          <p class="muted">Potentiale in Vertriebsprozessen identifizieren.</p>
+        </div>
+        <div class="service">
+          <h3>Prozessoptimierung</h3>
+          <p class="muted">MVPs &amp; Prototypen zur Digitalisierung bestehender Prozesse.</p>
+        </div>
+        <div class="service">
+          <h3>AI Integration</h3>
+          <p class="muted">AI dort integrieren, wo sie echten Mehrwert bringt.</p>
+        </div>
+        <div class="service">
+          <h3>Change Management</h3>
+          <p class="muted">Onboarding, Trainings &amp; nachhaltige Umsetzung.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <h2>Unser Team</h2>
+      <div class="team" style="margin-top:12px">
+        <div class="member"><img src="images/team1.jpg" alt="Jonas Piechota"><h4>Jonas Piechota</h4><p class="muted">Sales Specialist</p></div>
+        <div class="member"><img src="images/team2.jpg" alt="Luca Schmitt"><h4>Luca Schmitt</h4><p class="muted">Business Analyst</p></div>
+        <div class="member"><img src="images/team3.jpg" alt="Marleen Voigt"><h4>Marleen Voigt</h4><p class="muted">Marketing Specialist</p></div>
+        <div class="member"><img src="images/team4.jpg" alt="Réne Uhlig"><h4>Réne Uhlig</h4><p class="muted">Technology Consultant</p></div>
+        <div class="member"><img src="images/team5.jpg" alt="Clemens Rosenow"><h4>Clemens Rosenow</h4><p class="muted">Fullstack Developer</p></div>
+        <div class="member"><img src="images/team6.jpg" alt="Hugo Post"><h4>Hugo Post</h4><p class="muted">Project Lead</p></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Kontakt</h2>
+      <div class="contact" style="margin-top:12px">
+        <div class="box">
+          <strong>Alpha Vision Consulting</strong>
+          <p class="muted" style="margin-top:6px">E-Mail: hello@alpha-vision-consulting.com<br>Telefon: +49 123 456 789</p>
+        </div>
+        <div class="box">
+          <strong>Was wir anbieten</strong>
+          <p class="muted" style="margin-top:6px">Discovery Workshops, Prototyping, AI-Implementierung, Change Management</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        © <strong>Alpha Vision Consulting</strong> — Transforming Sales. Accelerating Success.
+      </div>
+      <div>
+        <a href="GOOGLE_DRIVE_LINK" target="_blank" rel="noopener noreferrer">One Pager (Google Drive)</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
