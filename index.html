@@ -1,71 +1,298 @@
-<!-- Simple single-file company website for Alpha Vision Consulting (Corporate Colors: Dark Blue #15153E, Orange #F36C21)
-     - Replace the GOOGLE_DRIVE_LINK placeholder with your actual Google Drive share link for the One Pager
-     - Replace image placeholders (logo.png and teamX.jpg) with your real files
+<!-- Überarbeitete Website für Alpha Vision Consulting
+     Corporate Colors: Dark Blue #15153E, Orange #F36C21
+     - Modernes, professionelles Design
+     - Verbesserte Typografie und Spacing
+     - Hover-Effekte und Animationen
+     - Responsive Design
 -->
 <!doctype html>
 <html lang="de">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Alpha Vision Consulting</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Alpha Vision Consulting - Transforming Sales. Accelerating Success.</title>
+  <meta name="description" content="Alpha Vision Consulting hilft Vertriebsabteilungen durch digitale Prozesse und AI-Integration mehr Abschlüsse zu erzielen.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#ffffff;
+      --bg:#fafbfd;
       --dark:#15153E;
       --accent:#F36C21;
-      --muted:#7a7a7a;
-      --maxw:1100px;
-      --radius:12px;
+      --accent-light:#ff8a47;
+      --muted:#6b7280;
+      --light-bg:#ffffff;
+      --border:#e5e7eb;
+      --maxw:1200px;
+      --radius:16px;
     }
-    *{box-sizing:border-box}
-    body{font-family:Poppins, Rubik, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; color:var(--dark); background:var(--bg); line-height:1.5}
-    a{color:var(--accent); text-decoration:none}
-    header{background:linear-gradient(180deg, rgba(21,21,62,0.08), rgba(21,21,62,0)); padding:28px 20px; border-bottom:1px solid #eef2ff}
-    .container{max-width:var(--maxw); margin:0 auto; padding:0 20px}
+    *{box-sizing:border-box; margin:0; padding:0}
+    body{
+      font-family:'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      margin:0;
+      color:var(--dark);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{color:var(--accent); text-decoration:none; transition:all 0.3s ease}
+    a:hover{color:var(--accent-light)}
+    
+    /* Header */
+    header{
+      background:var(--light-bg);
+      padding:24px 20px;
+      border-bottom:1px solid var(--border);
+      position:sticky;
+      top:0;
+      z-index:100;
+      backdrop-filter:blur(10px);
+      box-shadow:0 2px 8px rgba(21,21,62,0.03);
+    }
+    .container{max-width:var(--maxw); margin:0 auto; padding:0 24px}
+    .brand{display:flex; align-items:center; gap:16px}
+    .logo{
+      width:56px;
+      height:56px;
+      border-radius:12px;
+      background:linear-gradient(135deg, var(--dark), #2a2a6e);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      box-shadow:0 4px 12px rgba(21,21,62,0.15);
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    .brand-text{display:flex; flex-direction:column}
+    .brand-name{font-weight:700; font-size:18px; color:var(--dark)}
+    .brand-tagline{font-size:12px; color:var(--muted); margin-top:2px}
+    nav{margin-left:auto; display:flex; gap:8px}
+    nav a{
+      padding:10px 20px;
+      color:var(--dark);
+      font-weight:600;
+      font-size:15px;
+      border-radius:8px;
+      transition:all 0.3s ease;
+    }
+    nav a:hover{background:var(--bg); color:var(--accent)}
 
-    .brand{display:flex; align-items:center; gap:14px}
-    .logo{width:60px; height:60px; border-radius:10px; background:var(--dark); display:flex; align-items:center; justify-content:center; overflow:hidden}
-    .logo img{width:100%; height:100%; object-fit:cover; border-radius:10px}
-    nav{margin-left:auto}
-    nav a{margin-left:18px; color:var(--dark); font-weight:600}
-
-    .hero{display:flex; gap:32px; align-items:center; padding:48px 0}
+    /* Hero Section */
+    .hero{
+      display:flex;
+      gap:48px;
+      align-items:center;
+      padding:80px 0 60px;
+    }
     .hero-left{flex:1}
-    .hero h1{font-size:28px; margin:0 0 10px; color:var(--dark)}
-    .tag{display:inline-block; background:var(--accent); color:white; padding:6px 10px; border-radius:999px; font-weight:600; font-size:13px}
-    .kicker{color:var(--muted); margin-bottom:12px}
-    .intro{font-size:16px; color:var(--muted); margin-bottom:20px}
-    .cta{display:inline-block; background:var(--accent); color:white; padding:12px 18px; border-radius:10px; font-weight:700}
+    .hero h1{
+      font-size:42px;
+      font-weight:700;
+      margin:16px 0 20px;
+      color:var(--dark);
+      line-height:1.2;
+    }
+    .tag{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--accent), var(--accent-light));
+      color:white;
+      padding:8px 16px;
+      border-radius:999px;
+      font-weight:600;
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:0.5px;
+      box-shadow:0 4px 12px rgba(243,108,33,0.3);
+    }
+    .kicker{
+      color:var(--accent);
+      font-weight:600;
+      font-size:14px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      margin-top:12px;
+      margin-bottom:8px;
+    }
+    .intro{
+      font-size:18px;
+      color:var(--muted);
+      margin-bottom:32px;
+      line-height:1.7;
+    }
+    .cta{
+      display:inline-block;
+      background:linear-gradient(135deg, var(--accent), var(--accent-light));
+      color:white;
+      padding:16px 32px;
+      border-radius:12px;
+      font-weight:700;
+      font-size:16px;
+      box-shadow:0 8px 20px rgba(243,108,33,0.3);
+      transition:all 0.3s ease;
+    }
+    .cta:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 28px rgba(243,108,33,0.4);
+    }
 
-    .hero-right{width:360px; background:white; border-radius:14px; box-shadow:0 6px 24px rgba(21,21,62,0.06); padding:18px}
-    .card-title{font-weight:700; margin-bottom:8px}
-    .stat{display:flex; justify-content:space-between; padding:10px 0; border-bottom:1px dashed #f0f4ff}
+    .hero-right{
+      width:380px;
+      background:var(--light-bg);
+      border-radius:var(--radius);
+      box-shadow:0 12px 40px rgba(21,21,62,0.08);
+      padding:32px;
+      border:1px solid var(--border);
+    }
+    .card-title{
+      font-weight:700;
+      font-size:18px;
+      color:var(--dark);
+      margin-bottom:16px;
+    }
+    .stat{
+      display:flex;
+      justify-content:space-between;
+      padding:14px 0;
+      border-bottom:1px solid var(--border);
+      align-items:center;
+      gap:16px;
+    }
+    .stat:last-child{border-bottom:none}
+    .stat strong{color:var(--accent); font-size:20px}
+    .stat > div:last-child{
+      text-align:right;
+      max-width:65%;
+    }
 
-    section{padding:36px 0}
-    h2{margin:0 0 12px; font-size:20px; color:var(--dark)}
-    .grid{display:grid; gap:16px}
-    .services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
-    .service{background:#fff; border-radius:12px; padding:16px; box-shadow:0 4px 18px rgba(21,21,62,0.06)}
-    .service h3{margin:0 0 6px; color:var(--dark)}
-    .muted{color:var(--muted)}
+    /* Sections */
+    section{padding:60px 0}
+    h2{
+      margin:0 0 12px;
+      font-size:32px;
+      font-weight:700;
+      color:var(--dark);
+    }
+    .section-intro{
+      color:var(--muted);
+      font-size:18px;
+      margin-bottom:32px;
+    }
+    .grid{display:grid; gap:24px}
+    .services{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+    .service{
+      background:var(--light-bg);
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow:0 4px 16px rgba(21,21,62,0.06);
+      border:1px solid var(--border);
+      transition:all 0.3s ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .service::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      width:4px;
+      height:100%;
+      background:linear-gradient(180deg, var(--accent), var(--accent-light));
+      transform:scaleY(0);
+      transition:transform 0.3s ease;
+    }
+    .service:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(21,21,62,0.12);
+    }
+    .service:hover::before{transform:scaleY(1)}
+    .service h3{
+      margin:0 0 12px;
+      color:var(--dark);
+      font-size:20px;
+      font-weight:600;
+    }
+    .muted{color:var(--muted); line-height:1.6}
 
-    .team{display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-    .member{background:#fff; padding:18px; border-radius:12px; text-align:center; box-shadow:0 6px 18px rgba(21,21,62,0.03)}
-    .member img{width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:10px; border:3px solid var(--accent)}
-    .member h4{margin:0 0 6px; color:var(--dark)}
-    .member p{margin:0; color:var(--muted)}
+    /* Team */
+    .team{
+      display:grid;
+      gap:28px;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    }
+    .member{
+      background:var(--light-bg);
+      padding:28px;
+      border-radius:var(--radius);
+      text-align:center;
+      box-shadow:0 4px 16px rgba(21,21,62,0.06);
+      border:1px solid var(--border);
+      transition:all 0.3s ease;
+    }
+    .member:hover{
+      transform:translateY(-4px);
+      box-shadow:0 12px 32px rgba(21,21,62,0.12);
+    }
+    .member img{
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:16px;
+      border:4px solid var(--accent);
+      box-shadow:0 8px 20px rgba(243,108,33,0.2);
+    }
+    .member h4{
+      margin:0 0 6px;
+      color:var(--dark);
+      font-size:18px;
+      font-weight:600;
+    }
+    .member p{margin:0; color:var(--muted); font-size:14px}
 
-    .contact{display:flex; gap:20px; flex-wrap:wrap}
-    .contact .box{flex:1; min-width:240px; background:linear-gradient(180deg, #fff, #fbfdff); padding:18px; border-radius:12px; box-shadow:0 8px 30px rgba(21,21,62,0.04)}
+    /* Contact */
+    .contact{display:flex; gap:24px; flex-wrap:wrap}
+    .contact .box{
+      flex:1;
+      min-width:280px;
+      background:var(--light-bg);
+      padding:28px;
+      border-radius:var(--radius);
+      box-shadow:0 4px 16px rgba(21,21,62,0.06);
+      border:1px solid var(--border);
+    }
+    .contact .box strong{
+      color:var(--dark);
+      font-size:18px;
+      display:block;
+      margin-bottom:12px;
+    }
 
-    footer{border-top:1px solid #f1f5ff; padding:20px 0; color:var(--muted)}
-    .footer-inner{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    /* Footer */
+    footer{
+      border-top:1px solid var(--border);
+      padding:32px 0;
+      background:var(--light-bg);
+      color:var(--muted);
+      margin-top:40px;
+    }
+    .footer-inner{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .footer-inner strong{color:var(--dark)}
 
     @media (max-width:900px){
-      .hero{flex-direction:column}
-      .hero-right{width:100%}
+      .hero{flex-direction:column; padding:40px 0}
+      .hero h1{font-size:32px}
+      .hero-right{width:100%; max-width:500px}
       nav{display:none}
+    }
+    @media (max-width:600px){
+      .hero h1{font-size:28px}
+      h2{font-size:26px}
+      .container{padding:0 16px}
     }
   </style>
 </head>
@@ -77,9 +304,9 @@
           <!-- Replace with your logo image -->
           <img src="images/logo.png" alt="Alpha Vision Consulting Logo">
         </div>
-        <div>
-          <div style="font-weight:700">Alpha Vision Consulting</div>
-          <div class="muted" style="font-size:13px">Transforming Sales. Accelerating Success.</div>
+        <div class="brand-text">
+          <div class="brand-name">Alpha Vision Consulting</div>
+          <div class="brand-tagline">Transforming Sales. Accelerating Success.</div>
         </div>
       </div>
       <nav>
@@ -102,57 +329,96 @@
 
       <aside class="hero-right">
         <div class="card-title">Quick Facts</div>
-        <div class="stat"><div>Sales Zeit für Verkauf</div><div><strong>25%</strong></div></div>
-        <div class="stat"><div>Fokus</div><div class="muted">Process Optimization · AI Integration</div></div>
-        <div style="padding-top:10px"><a href="#services">Unsere Services ansehen →</a></div>
+        <div class="stat">
+          <div>Sales Zeit für Verkauf</div>
+          <div><strong>+25%</strong></div>
+        </div>
+        <div class="stat">
+          <div>Fokus</div>
+          <div class="muted">·Process Optimization <br\> · AI Integration</div>
+        </div>
+        <div style="padding-top:14px">
+          <a href="#services" style="font-weight:600">Unsere Services ansehen →</a>
+        </div>
       </aside>
     </section>
 
     <section id="services">
       <h2>Unsere Services</h2>
-      <p class="muted">Von Discovery bis zur AI-Integration — wir begleiten Sie in allen Phasen.</p>
-      <div class="grid services" style="margin-top:16px">
+      <p class="section-intro">Von Discovery bis zur AI-Integration — wir begleiten Sie in allen Phasen.</p>
+      <div class="grid services">
         <div class="service">
           <h3>Discovery &amp; Analyse</h3>
-          <p class="muted">Potentiale in Vertriebsprozessen identifizieren.</p>
+          <p class="muted">Wir identifizieren Potenziale in Ihren Vertriebsprozessen und entwickeln maßgeschneiderte Lösungsansätze.</p>
         </div>
         <div class="service">
           <h3>Prozessoptimierung</h3>
-          <p class="muted">MVPs &amp; Prototypen zur Digitalisierung bestehender Prozesse.</p>
+          <p class="muted">MVPs &amp; Prototypen zur Digitalisierung bestehender Prozesse für maximale Effizienz.</p>
         </div>
         <div class="service">
           <h3>AI Integration</h3>
-          <p class="muted">AI dort integrieren, wo sie echten Mehrwert bringt.</p>
+          <p class="muted">Intelligente AI-Integration dort, wo sie echten Mehrwert bringt und messbare Ergebnisse liefert.</p>
         </div>
         <div class="service">
           <h3>Change Management</h3>
-          <p class="muted">Onboarding, Trainings &amp; nachhaltige Umsetzung.</p>
+          <p class="muted">Professionelles Onboarding, Trainings &amp; nachhaltige Umsetzung für langfristigen Erfolg.</p>
         </div>
       </div>
     </section>
 
     <section id="team">
       <h2>Unser Team</h2>
-      <div class="team" style="margin-top:12px">
-        <div class="member"><img src="images/Jonas.jpeg" alt="Jonas Piechota"><h4>Jonas Piechota</h4><p class="muted">Sales Specialist</p></div>
-        <div class="member"><img src="images/Luca.jpeg" alt="Luca Schmitt"><h4>Luca Schmitt</h4><p class="muted">Business Analyst</p></div>
-        <div class="member"><img src="images/Marleen.jpeg" alt="Marleen Voigt"><h4>Marleen Voigt</h4><p class="muted">Marketing Specialist</p></div>
-        <div class="member"><img src="images/Rene.jpeg" alt="Réne Uhlig"><h4>Réne Uhlig</h4><p class="muted">Technology Consultant</p></div>
-        <div class="member"><img src="images/Clemens.jpeg" alt="Clemens Rosenow"><h4>Clemens Rosenow</h4><p class="muted">Fullstack Developer</p></div>
-        <div class="member"><img src="images/Hugo.jpeg" alt="Hugo Post"><h4>Hugo Post</h4><p class="muted">Project Lead</p></div>
+      <p class="section-intro">Experten mit Leidenschaft für Innovation und Sales Excellence.</p>
+      <div class="team">
+        <div class="member">
+          <img src="images/Jonas.jpeg" alt="Jonas Piechota">
+          <h4>Jonas Piechota</h4>
+          <p class="muted">Sales Specialist</p>
+        </div>
+        <div class="member">
+          <img src="images/Luca.jpeg" alt="Luca Schmitt">
+          <h4>Luca Schmitt</h4>
+          <p class="muted">Business Analyst</p>
+        </div>
+        <div class="member">
+          <img src="images/Marleen.jpeg" alt="Marleen Voigt">
+          <h4>Marleen Voigt</h4>
+          <p class="muted">Marketing Specialist</p>
+        </div>
+        <div class="member">
+          <img src="images/Rene.jpeg" alt="Réne Uhlig">
+          <h4>Réne Uhlig</h4>
+          <p class="muted">Technology Consultant</p>
+        </div>
+        <div class="member">
+          <img src="images/Clemens.jpeg" alt="Clemens Rosenow">
+          <h4>Clemens Rosenow</h4>
+          <p class="muted">Fullstack Developer</p>
+        </div>
+        <div class="member">
+          <img src="images/Hugo.jpeg" alt="Hugo Post">
+          <h4>Hugo Post</h4>
+          <p class="muted">Project Lead</p>
+        </div>
       </div>
     </section>
 
     <section id="contact">
       <h2>Kontakt</h2>
-      <div class="contact" style="margin-top:12px">
+      <p class="section-intro">Bereit für den nächsten Schritt? Kontaktieren Sie uns für ein unverbindliches Erstgespräch.</p>
+      <div class="contact">
         <div class="box">
           <strong>Alpha Vision Consulting</strong>
-          <p class="muted" style="margin-top:6px">E-Mail: hello@alpha-vision-consulting.com<br>Telefon: +49 123 456 789</p>
+          <p class="muted" style="margin-top:8px">
+            <strong style="font-size:15px;color:var(--dark)">E-Mail:</strong> <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="89e1ece5e5e6c9e8e5f9e1e8a4ffe0fae0e6e7a4eae6e7fafce5fde0e7eea7eae6e4">[email&#160;protected]</a><br>
+            <strong style="font-size:15px;color:var(--dark)">Telefon:</strong> +49 123 456 789
+          </p>
         </div>
         <div class="box">
           <strong>Was wir anbieten</strong>
-          <p class="muted" style="margin-top:6px">Discovery Workshops, Prototyping, AI-Implementierung, Change Management</p>
+          <p class="muted" style="margin-top:8px">
+            Discovery Workshops · Prototyping · AI-Implementierung · Change Management · Training &amp; Support
+          </p>
         </div>
       </div>
     </section>
@@ -161,12 +427,7 @@
   <footer>
     <div class="container footer-inner">
       <div>
-        © <strong>Alpha Vision Consulting</strong> — Transforming Sales. Accelerating Success.
+        © 2025 <strong>Alpha Vision Consulting</strong> — Transforming Sales. Accelerating Success.
       </div>
       <div>
-        <a href="GOOGLE_DRIVE_LINK" target="_blank" rel="noopener noreferrer">One Pager (Google Drive)</a>
-      </div>
-    </div>
-  </footer>
-</body>
-</html>
+        <a href="GOOGLE_DRIVE_LINK" target="_blank"
